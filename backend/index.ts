@@ -99,14 +99,6 @@ class Application {
       logger.info(`📊 Environment: ${process.env.NODE_ENV}`);
       logger.info(`🔗 API URL: ${baseUrl}/`);
       logger.info(`🏥 Health Check: ${baseUrl}/api/health`);
-
-      if (isProduction) {
-        logger.info(
-          `🌐 WebSocket URL: wss://${
-            process.env.RENDER_EXTERNAL_HOSTNAME || "chess-backend.onrender.com"
-          }`
-        );
-      }
     });
 
     process.on("SIGTERM", this.gracefulShutdown.bind(this));
